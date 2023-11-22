@@ -1,5 +1,7 @@
 console.log('hi')
 
+
+// adds array to hold all images
 const pictureArray = [
     {
         image: 'images/barley-big.jpg',
@@ -66,10 +68,13 @@ const pictureArray = [
 
 ]
 
+// collects section in a variable for container
 const $container = document.getElementById('section')
 
+// creates empty array to push for of loop to
 const template = []
-    
+
+// for of loop to add content to the page
 for (const picture of pictureArray) {
     template.push(`
         <img src="${picture.thumbnail}"
@@ -80,12 +85,13 @@ for (const picture of pictureArray) {
       `)
 }
 
-
+// joins the inner html to the container variable
 $container.innerHTML = template.join('')
 
-// const $img = document.querySelector('img')
+// collects content in class modal and puts it in a variable
 const $modal = document.querySelector('.modal')
 
+// adds event listener by clicking to show the small image
 $container.addEventListener('click', function (e) 
 { if(e.target.classList.contains('galleryPhoto')) {
     console.log(e.target);
@@ -96,6 +102,7 @@ $container.addEventListener('click', function (e)
     }
 })
 
+// adds event listener by clicking to remove show
 $modal.addEventListener('click', function () {
   $modal.classList.remove('show')
 })

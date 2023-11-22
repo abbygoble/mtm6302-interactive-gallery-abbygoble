@@ -1,32 +1,42 @@
+/* styles header to flex and centers content */
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+/* styles section to grid display and adjusts sizing of columns */
 .section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
   
-  img {
-    max-width: 100%;
-    cursor: pointer;
-  }
+/* styles images to full width, and changes cursor to pointer when touching and image */
+img {
+  max-width: 100%;
+  cursor: pointer;
+}
   
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* sets position of modal, displays it as grid, adjusts spacing, and sets background colour */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
     
-    display: grid;
-    justify-content: center;
-    align-content: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
     
-    width: calc(100% - 50px);
-    height: calc(100% - 50px);
-    padding: 25px;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  padding: 25px;
     
-    background-color: rgba(255,255,255, 0.9);
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .show {
-    opacity: 1;
-    visibility: visible;
-  }
+  background-color: rgba(255,255,255, 0.9);
+  opacity: 0;
+  visibility: hidden;
+}
+
+  /* styles visibility and opacity of show */
+.show {
+  opacity: 1;
+  visibility: visible;
+}
