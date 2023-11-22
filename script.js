@@ -72,12 +72,30 @@ const template = []
     
 for (const picture of pictureArray) {
     template.push(`
-        <p style="text-align: center;">
-        <img src="${picture.thumbnail}"</img><br>
-        <p>${picture.name}</p>
-      </p>
+        <img src="${picture.thumbnail}"
+        class="galleryPhoto"
+        data-large="${picture.image}"
+        data-source="${picture.name}"
+        </img>
       `)
 }
 
 
 $container.innerHTML = template.join('')
+
+// const $img = document.querySelector('img')
+const $modal = document.querySelector('.modal')
+
+$container.addEventListener('click', function (e) 
+{ if(e.target.classList.contains('galleryPhoto')) {
+    console.log(e.target);
+    $modal.innerHTML = `
+    <img src="${e.target.dataset.large}">   
+    <small>${e.target.dataset.source}</small>`
+    $modal.classList.add('show')
+    }
+})
+
+$modal.addEventListener('click', function () {
+  $modal.classList.remove('show')
+})
